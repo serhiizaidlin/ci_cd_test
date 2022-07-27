@@ -176,8 +176,6 @@ if __name__ == "__main__":
     results={}
     results['semgrep'] = convert_semgrep(semgrep_output)
     results['secrets'] = convert_secrets(detect_secrets_results)
-    print(f"\n[!] ----------------------- PROCESS SCAN RESULTS END ----------------------- [!]")
-    print(f"\n[!] ----------------------- PRINT SCAN RESULTS START ----------------------- [!]")
     findings_counter = 0
     for tool in results:
         if tool == 'semgrep':
@@ -186,9 +184,10 @@ if __name__ == "__main__":
             print("\n[!] --------------------- SECRETS --------------------- [!]")
         count = print_findings_to_stdout(results[tool]['findings'], tool)
         findings_counter+=count
+    print(f"\n[!] ----------------------- PROCESS SCAN RESULTS END ----------------------- [!]")
     if findings_counter != 0:
-        print(f"\n[!] -------------------------- BUILD FAILED --------------------------- [!]")
-        print(f"\nBuild failed because security issues were found in a source code. Please fix all findings and restart the pipeline")
+        print(f"\n[!] ---------------------------- BUILD FAILED ------------------------------ [!]")
+        print(f"\nBuild failed due to security issues found in a source code. Please fix all findings and restart the pipeline")
     else:
         #Build app image
         print(f"\n[!] ----------------------------- IMAGE BUILD ------------------------------ [!]")
