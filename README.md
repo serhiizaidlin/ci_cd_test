@@ -16,7 +16,7 @@ pip3 install -r requirements.txt
 
 ## Usage
 ### Initial build
-This script uses https://github.com/serhiizaidlin/sample-nodejs as a source for scanning and building test app. You don't need to clone this repo, all work is done by CI/CD script.
+This script uses https://github.com/serhiizaidlin/sample-nodejs as a target for scanning and building test app. You don't need to clone this repo, all work is done by CI/CD script.
 
 To start the script, being in `ci_cd_test` dir, run:
 ```
