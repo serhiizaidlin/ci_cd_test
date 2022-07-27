@@ -2,7 +2,7 @@
 This repo contains script which mimics CI/CD and includes security scan stage in it, which uses `semgrep` and `detect-secrets` tools for static code analysis
 
 ## Prerequisites
-To run the scrip you need Git, Docker, Python3 and Pip3 installed.
+To run the script you need Git, Docker, Python3 and Pip3 installed.
 
 
 To install scanners run:
